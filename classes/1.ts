@@ -1,15 +1,15 @@
 //A class is a bluebpirnt for creating objects
 
 class Account {
-  readonly id: number;
+  readonly id: number; //Readonly property
   owner: string;
-  balance: number;
-  nickame?: string;
+  private _balance: number; //Private property - cannot be accessed outside the class
+  nickame?: string; //Optional chaining
 
-  constructor(id: number, owner: string, balance: number) {
+  constructor(id: number, owner: string, _balance: number) {
     this.id = id;
     this.owner = owner;
-    this.balance = balance;
+    this._balance = _balance;
   }
 
   //Method
@@ -17,7 +17,7 @@ class Account {
     if (amount <= 0) {
       throw new Error("Invalid amount");
     }
-    this.balance += amount;
+    this._balance += amount;
   }
 }
 const adeAccount = new Account(1, "Azin", 500_000_000);
